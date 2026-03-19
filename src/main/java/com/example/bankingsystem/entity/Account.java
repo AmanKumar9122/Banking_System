@@ -1,5 +1,6 @@
 package com.example.bankingsystem.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -24,6 +25,8 @@ public class Account {
     private boolean isActive = true;
 
     @ManyToOne
+    @JoinColumn(name = "customer_id")
+    @JsonIgnore
     private Customer customer;
 
     @OneToMany(mappedBy = "account", cascade = CascadeType.ALL)
