@@ -40,7 +40,7 @@ public class TransactionServiceImpl implements TransactionService {
 
         // Record transaction
         Transaction txn = new Transaction();
-        txn.setType(TransactionType.CREDIT); // FIXED: A deposit is money IN (CREDIT)
+        txn.setType(TransactionType.CREDIT);
         txn.setAmount(amount);
         txn.setDate(LocalDateTime.now());
         txn.setAccount(account);
@@ -65,7 +65,7 @@ public class TransactionServiceImpl implements TransactionService {
 
         // Record transaction
         Transaction txn = new Transaction();
-        txn.setType(TransactionType.DEBIT); // Correct: A withdrawal is money OUT (DEBIT)
+        txn.setType(TransactionType.DEBIT);
         txn.setAmount(amount);
         txn.setDate(LocalDateTime.now());
         txn.setAccount(account);
